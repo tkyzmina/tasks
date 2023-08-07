@@ -1,11 +1,13 @@
-// https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+const prices = [4, 5, 6, 1, 8]
 
-var findMin = function (nums) {
-  let minNum = nums[0]
-  for (let num of nums) {
-    if (minNum > num) {
-      minNum = num
-    }
-  }
-  return minNum
+var maxProfit = function (prices) {
+  let profit = 0
+  let min = prices[0]
+  prices.forEach((element) => {
+    min = Math.min(element, min)
+    profit = Math.max(element - min, profit)
+  })
+  return profit
 }
+maxProfit(prices)
