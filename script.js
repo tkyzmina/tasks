@@ -9,3 +9,9 @@ var findMin = function (nums) {
   }
   return minNum
 }
+
+// Second solution
+
+var findMin2 = function (nums) {
+  return Math.min(...nums)
+}
